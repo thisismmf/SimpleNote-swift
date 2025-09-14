@@ -7,13 +7,16 @@ struct SimpleNoteApp: App {
     init() {
         let prefs = Preferences()
         var http = HTTPClient()
-        http.baseURL = URL(string: "https://simple.darkube.app")!   // TODO: set your real host
+        http.baseURL = URL(string: "https://simple.darkube.app")!   // ← your host
         http.tokenProvider = { prefs.token }
+
+        let notesRepo = RealNotesRepository(http: http)
+        let authRepo  = RealAuthRepository(httpClient: http, preferences: prefs)
 
         _container = StateObject(
             wrappedValue: AppContainer(
-                authRepository: RealAuthRepository(httpClient: http, preferences: prefs),
-                notesRepository: FakeNotesRepository(),
+                authRepository: authRepo,
+                notesRepository: notesRepo,
                 preferences: prefs
             )
         )

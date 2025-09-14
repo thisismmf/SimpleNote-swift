@@ -6,8 +6,8 @@ enum NavRoute: Hashable {
     case authRegister
     case authForgot
     case home
-    case noteDetail(id: String)
-    case noteEdit(id: String?)
+    case noteDetail(id: Int)
+    case noteEdit(id: Int?)   // nil = new
     case settings
     case settingsChangePassword
     case logoutConfirm

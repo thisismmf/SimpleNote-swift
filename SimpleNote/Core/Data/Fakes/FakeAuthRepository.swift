@@ -5,4 +5,5 @@ final class FakeAuthRepository: AuthRepository {
     func userInfo() async throws -> UserInfoDTO {
         .init(id: 1, username: "john", email: "john@doe.com", first_name: "John", last_name: "Doe")
     }
+    func changePassword(current: String, new: String) async throws { /* no-op */ }
 }

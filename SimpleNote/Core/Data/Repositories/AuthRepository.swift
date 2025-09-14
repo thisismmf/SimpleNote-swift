@@ -5,6 +5,10 @@ struct LoginRequestDTO: Encodable {
     let username: String        // backend expects "username" even if you pass email
     let password: String
 }
+struct ChangePasswordRequestDTO: Encodable {
+    let old_password: String
+    let new_password: String
+}
 struct LoginResponseDTO: Decodable {
     let access: String
     let refresh: String
@@ -32,6 +36,7 @@ protocol AuthRepository {
     func login(username: String, password: String) async throws
     func register(username: String, email: String, pass: String, firstName: String, lastName: String) async throws
     func refresh() async throws
+    func changePassword(current: String, new: String) async throws   // ← ADD THIS
     func userInfo() async throws -> UserInfoDTO
 }
 
@@ -66,4 +71,11 @@ final class RealAuthRepository: AuthRepository {
     func userInfo() async throws -> UserInfoDTO {
         try await http.get(.userInfo)
     }
+    
+    func changePassword(current: String, new: String) async throws {
+            _ = try await http.post(
+                .changePassword,
+                body: ChangePasswordRequestDTO(old_password: current, new_password: new)
+            ) as EmptyDTO
+        }
 }

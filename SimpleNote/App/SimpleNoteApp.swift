@@ -1,4 +1,3 @@
-// SimpleNote/App/SimpleNoteApp.swift
 import SwiftUI
 
 @main
@@ -7,10 +6,10 @@ struct SimpleNoteApp: App {
 
     init() {
         let prefs = Preferences()
-        let http = HTTPClient(
-            baseURL: URL(string: "https://simple.darkube.app")!, // ← your host
-            tokenProvider: { prefs.token }
-        )
+        var http = HTTPClient()
+        http.baseURL = URL(string: "https://simple.darkube.app")!   // TODO: set your real host
+        http.tokenProvider = { prefs.token }
+
         _container = StateObject(
             wrappedValue: AppContainer(
                 authRepository: RealAuthRepository(httpClient: http, preferences: prefs),

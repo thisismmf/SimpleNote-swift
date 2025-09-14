@@ -1,10 +1,9 @@
-// SimpleNote/Core/Network/HTTPClient.swift
 import Foundation
 
 enum HTTPError: Error { case badStatus(Int, String) }
 
 struct HTTPClient {
-    var baseURL: URL = URL(string: "https://example.com")! // TODO: set real base
+    var baseURL: URL = URL(string: "https://example.com")!   // TODO: set real base in App init
     var session: URLSession = .shared
     var tokenProvider: () -> String? = { nil }
 

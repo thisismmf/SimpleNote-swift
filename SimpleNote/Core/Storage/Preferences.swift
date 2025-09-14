@@ -1,4 +1,3 @@
-// SimpleNote/Core/Storage/Preferences.swift
 import Foundation
 
 final class Preferences {

@@ -1,17 +1,17 @@
-// SimpleNote/Core/Network/APIRoutes.swift
 import Foundation
 
 enum APIRoute {
-    case login
     case register
+    case login
+    case refresh
     case userInfo
-    // case changePassword  // add when you wire it
 
     var path: String {
         switch self {
-        case .login:        return "/api/auth/token/"
-        case .register:     return "/api/auth/register/"
-        case .userInfo:     return "/api/auth/userinfo/"
+        case .register: return "/api/auth/register/"
+        case .login:    return "/api/auth/token/"
+        case .refresh:  return "/api/auth/token/refresh/"
+        case .userInfo: return "/api/auth/userinfo/"
         }
     }
 }

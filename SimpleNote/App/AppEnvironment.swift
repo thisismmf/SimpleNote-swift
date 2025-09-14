@@ -1,6 +1,5 @@
 import Foundation
 
-/// App-level container (very lightweight DI)
 final class AppContainer: ObservableObject {
     let authRepository: AuthRepository
     let notesRepository: NotesRepository

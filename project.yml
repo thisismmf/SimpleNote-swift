@@ -1,0 +1,37 @@
+name: SimpleNote
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  SimpleNote:
+    type: application
+    platform: iOS
+    sources:
+      - path: SimpleNote
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.example.SimpleNote
+      SWIFT_VERSION: 5.9
+      INFOPLIST_FILE: SimpleNote/Info.plist
+    scheme:
+      testTargets:
+        - SimpleNoteTests
+        - SimpleNoteUITests
+  SimpleNoteTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: SimpleNoteTests
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.example.SimpleNoteTests
+    dependencies:
+      - target: SimpleNote
+  SimpleNoteUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: SimpleNoteUITests
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.example.SimpleNoteUITests
+    dependencies:
+      - target: SimpleNote

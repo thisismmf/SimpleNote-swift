@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		000444BA89CE1619A367C68E /* ResultTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BABE89769FBFDC4540984EC /* ResultTypes.swift */; };
+		00F9D72B2E768C20005FD584 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F9D72A2E768C1B005FD584 /* Secrets.plist */; };
 		04792CB6A31767AA8CB4DC5B /* NotesTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D3C99540E2C9277318638 /* NotesTheme.swift */; };
 		130AD8EED6232D4473C3F50A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8D1BCECC39537C092A233 /* AppRouter.swift */; };
 		139587830D1D637E914573F3 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350A1CD5F5A3A56366E6FA7 /* HomeScreen.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F9D72A2E768C1B005FD584 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Secrets.plist; sourceTree = "<group>"; };
 		07062B4E30B5540FF1359C07 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		0F1007265A3897A0B8F79A3A /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		0FD6B06FE8252CA95004DEC2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -125,6 +127,10 @@
 		F916687BE0A4843D3BE227FF /* NoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		00F9D7262E768AFF005FD584 /* AI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AI; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXGroup section */
 		0122D5A0E95DCB431ABEEC85 /* Onboarding */ = {
 			isa = PBXGroup;
@@ -145,6 +151,7 @@
 		11DEDD604BAE2E10958AD299 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				00F9D7262E768AFF005FD584 /* AI */,
 				E67ADB40CCB8E74C067F9CBD /* Common */,
 				4F43E2D3BB382063BED90A87 /* Data */,
 				A180BF490A1E82E823F5606E /* DesignSystem */,
@@ -327,6 +334,7 @@
 		8EB4150CB8B098DD55EB329C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00F9D72A2E768C1B005FD584 /* Secrets.plist */,
 				7642C239FB191AE22FA19D6A /* Assets.xcassets */,
 				1B576AB6856803A84B5BA907 /* Preview Content */,
 			);
@@ -512,6 +520,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				00F9D7262E768AFF005FD584 /* AI */,
+			);
 			name = SimpleNote;
 			packageProductDependencies = (
 			);
@@ -543,7 +554,6 @@
 			);
 			mainGroup = DF3734349FCE48D5EB7DF5CD;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -560,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401E8D15611AB97E343A5B46 /* Assets.xcassets in Resources */,
+				00F9D72B2E768C20005FD584 /* Secrets.plist in Resources */,
 				C8B21C76BFF4BFD3C19ED16B /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
